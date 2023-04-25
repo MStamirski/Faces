@@ -41,7 +41,7 @@ In this notebook a multilabel classification was performed. The main problem to 
 #### Notebook "Model - all - PyTorch"
 The PyTorch library is more difficult to manage than keras with TensorFlow. Finally I succeeded and created working neural network in this framework. Only differences compared to described above were: no Sigmoid activation for output (loss function CrossEntropy in PyTorch doesn't work with probabilities returned by Sigmoid) and batch size in training was 32 (not 64) because of time consumption. I've already had two separate datasets with faces and labels, so I didn't use Dataset and Dataloader classes. Instead I wrote my own training and batching algorihtm. 
 
-Performance of this model was worse than the previous one. F1 score after tuning was equal to 0.76 (before tuning it was 0.73, so the diference is noticeable). For this reason there is more red color in prezentation of results.
+Performance of this model was worse than the previous one. F1 score after tuning was equal to 0.76 (before tuning it was 0.73, so the diference is noticeable). For this reason there is more red color in presentation of results...
 
 #### Notebook "Gradio"
-My multilabel model 
+My multilabel model was than tested on faces, cut manually from random graphics from Internet (Google phrase: people, search graphics). Gradio library allows use of such photos as an input for model in a very easy way. Results are shown in this notebook. Because of different format and shape of photos than used in training dataset they are worse, but not fatal... 
