@@ -18,7 +18,7 @@ Set of saved faces was then processed in order to obtain a dataset, suitable for
 At this stage there was 1325 faces. Then I augmented this set by applying blur and zoom (with picture size unchanged). Finally I got dataset with 5300 different faces. In this notebook I included functions loading labels, processing faces and returning data with labels. These functions are imported in next notebooks.
 
 #### Notebook "Dataset - presentation"
-This notebook contains overview of labels before and after augmentation of dataset. It also shows some random faces with labels and their alteration during augmentation. While sex labels were quite balanced, the rest were not. The least balanced was label 'hat'.
+This notebook contains overview of labels before and after augmentation of dataset. It also shows some random faces with labels and their alteration during augmentation. While sex labels were quite balanced, the rest were not. The least balanced label was 'hat'.
 
 #### Notebook "Functions"
 Next step of data preparation was to normalize numbers of grayscale color (from 0 to 1 instead of 0-255) and replace labels coded in character with digits 0 or 1. Another functions were related to displaying results of model training and testing. 
