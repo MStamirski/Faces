@@ -36,7 +36,12 @@ Here we have some functions, changed comparing to described above, in order to d
 There are several notebooks with analogous structure, where a Sequential model (keras library) of neural network is built, trained and tested - for each one of all labels. The structure of models is a result of some trials. All of them contain 3 convolutional layers. They were trained in 20 epochs, with "adam" optimizer and "binary crossentropy" loss function. History of training is shown on diagrams, as well as results of predictions.
 
 #### Notebook "Model - all"
-In this notebook a multilabel classification was performed. The main problem to solve was how complicated the model should be compared to models of previous tasks. Number of filters in convolutions and units in dense layer should be multiplied by 5? To check it out I used a Hyperband tuner from keras_tuner library. It performed a set of trials with combinations of different values of model hyperparameters. Finally it turned out that there is a synergy between labels. Number of filter in first two convolutions was doubled, in third one was more than quadrupled, but number of units in fully connected layer was multiplied almost by 5. F1 score after tuning was equal to 0.92 (before tuning almost the same, but best threshold was 0.35).
+In this notebook a multilabel classification was performed. The main problem to solve was how complicated the model should be, compared to models of previous tasks. Number of filters in convolutions and units in dense layer should be multiplied by 5? To check it out I used a Hyperband tuner from keras_tuner library. It performed a set of trials with combinations of different values of model hyperparameters. Finally it turned out that there is a synergy between labels. Number of filters in first two convolutions was doubled, in third one was more than quadrupled, but number of units in fully connected layer was multiplied almost by 5. F1 score after tuning was equal to 0.92 (before tuning almost the same, but best threshold was 0.35).
 
 #### Notebook "Model - all - PyTorch"
-The PyTorch library is more difficult to manage. To 
+The PyTorch library is more difficult to manage than keras with TensorFlow. Finally I succeeded and created working neural network in this framework. Only differences compared to described above were: no Sigmoid activation for output (loss function CrossEntropy in PyTorch doesn't work with probabilities returned by Sigmoid) and batch size in training was 32 (not 64) because of time consumption. I've already had two separate datasets with faces and labels, so I didn't use Dataset and Dataloader classes. Instead I wrote my own training and batching algorihtm. 
+
+Performance of this model was worse than the previous one. F1 score after tuning was equal to 0.76 (before tuning it was 0.73, so the diference is noticeable). For this reason there is more red color in prezentation of results.
+
+#### Notebook "Gradio"
+My multilabel model 
