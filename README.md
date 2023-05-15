@@ -45,3 +45,6 @@ Performance of this model was worse than the previous one. For this reason there
 
 #### Notebook "Gradio"
 My multilabel keras model was than tested on faces, cut manually from random graphics from Internet (Google phrase: people, search graphics). Gradio library allows use of such photos as an input for model in a very easy way. Results are shown in this notebook. Because of not standarized shape and different sources of photos than used in training dataset, the outcome is worse, but still interesting.
+
+
+![](https://github.com/MStamirski/Faces/blob/main/face.PNG)
